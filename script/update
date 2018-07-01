@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Update application to run for its current checkout.
+
+# The 'script' directory that this script is in.
+readonly SCRIPT_DIR=$( cd "$( dirname "$0" )" && pwd )
+# The root directory of this resources repo (aka '.')
+readonly SOURCE_DIR=$( pwd )
+
+"$SCRIPT_DIR/bootstrap" || exit 1
+
+echo "==> Dependencies now up-to-date."
+
+exit 0

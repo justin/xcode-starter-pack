@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# Resolve all dependencies that the application requires to run.
+
+# The root directory of this resources repo (aka '.')
+readonly SOURCE_DIR=$( pwd )
+
+# Ensure we have Homewbrew installed.
+if ! [ -x "$(command -v brew)" ]; then
+  echo "Homebrew needs to be installed to install Carthage, and other things we depend on."
+  exit 0
+fi
+
+# Install Homebrew Dependencies such as Carthage.
+readonly brew_path=$(echo `which brew`)
+echo "==> Updating Homebrew dependencies..."
+$($brew_path bundle check)&> /dev/null
+if ! [[ $? -eq 0 ]]; then
+  $brew_path bundle || exit 1
+fi
+
+# Install Carthage dependencies
+readonly carthage_path=$(echo `which carthage`)
+echo "==> Bootstrapping Carthage..."
+mkdir -p "$SOURCE_DIR/Carthage"
+if ! cmp -s "$SOURCE_DIR/Cartfile.resolved" "$SOURCE_DIR/Carthage/Cartfile.resolved"; then
+  $($carthage_path bootstrap)&> /dev/null
+  cp "$SOURCE_DIR/Cartfile.resolved" "$SOURCE_DIR/Carthage"
+fi

@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# script/setup: Set up application for the first time after cloning
+
+# The 'script' directory that this script is in.
+readonly SCRIPT_DIR=$( cd "$( dirname "$0" )" && pwd )
+# The root directory of this resources repo (aka '.')
+readonly SOURCE_DIR=$( pwd )
+
+# Boostrap our dependencies.
+"$SCRIPT_DIR/bootstrap" || exit 1
+
+echo "==> Ready to go!"
+
+exit 0
