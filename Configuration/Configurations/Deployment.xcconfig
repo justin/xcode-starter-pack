@@ -1,0 +1,17 @@
+#include "../Universal-Common.xcconfig"
+
+// This the base configuration for any AppStore configuration.
+
+// Whether to perform App Store validation checks
+VALIDATE_PRODUCT = YES
+
+// Whether to only build the active architecture
+ONLY_ACTIVE_ARCH = NO
+
+// Whether to strip debugging symbols when copying the built product to its
+// final installation location
+STRIP_INSTALLED_PRODUCT = YES
+
+// The optimization level for the produced Swift binary. Optimized presently for speed.
+// See Universal-Common.xcconfig for other options.
+SWIFT_OPTIMIZATION_LEVEL = -O

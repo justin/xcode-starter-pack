@@ -1,0 +1,8 @@
+//
+// This are configuration options specific to all internal macOS applications.
+// This file should not be considered standalone. It should instead be imported
+// into your target specific xcconfig.
+//
+
+// Import macOS Common Configuration
+#include "macOS-Common.xcconfig"

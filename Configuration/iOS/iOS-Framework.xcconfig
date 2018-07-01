@@ -1,0 +1,20 @@
+//
+// This are configuration options specific to all internal iOS frameworks.
+// This file should not be considered standalone. It should instead be imported
+// into your target specific xcconfig.
+//
+
+// Import iOS Common Configuration
+#include "iOS-Common.xcconfig"
+
+// We support extensions in the app. If a framework doesn't need to be extension friendly, override it in the project-specific configuration.
+APPLICATION_EXTENSION_API_ONLY = YES
+
+// We don't actually install these since we're on iOS.
+SKIP_INSTALL = YES
+
+// This is basically a default setting that shouldn't be overridden.
+INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
+
+// Auto Link any frameworks we use by default.
+CLANG_MODULES_AUTOLINK = YES

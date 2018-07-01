@@ -1,0 +1,24 @@
+#include "../Universal-Common.xcconfig"
+
+// This the base configuration for any development configuration.
+
+// Only build the current architecture.
+ONLY_ACTIVE_ARCH = YES
+
+// Don't do any Swift optimization so developers' lives are easier.
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+
+// Enable single file compilation mode for incremental build support.
+SWIFT_COMPILATION_MODE = singlefile
+
+// Allow @testable imports
+ENABLE_TESTABILITY = YES
+
+// Xcode 8 introduced a new flag for conditional compilation
+//
+// This enables conditional compilation with #if DEBUG
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG JWW_DEV JWW_TESTING
+
+// Whether to strip debugging symbols when copying the built product to its
+// final installation location
+STRIP_INSTALLED_PRODUCT = NO

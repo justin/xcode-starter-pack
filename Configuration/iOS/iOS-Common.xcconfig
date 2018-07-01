@@ -1,0 +1,12 @@
+//
+// This file defines common settings that should be enabled for every new
+// iOS related project or target.
+//
+
+#include "../Universal-Common.xcconfig"
+
+// Our current shipping target.
+IPHONEOS_DEPLOYMENT_TARGET = 11.0
+
+// The SDK we are using.
+SDKROOT = iphoneos

@@ -1,0 +1,11 @@
+//
+// This are configuration options specific to all internal iOS extensions.
+// This file should not be considered standalone. It should instead be imported
+// into your target specific xcconfig.
+//
+
+// Import iOS Common Configuration
+#include "iOS-Common.xcconfig"
+
+// Don't even think about calling UIApplication!
+APPLICATION_EXTENSION_API_ONLY = YES

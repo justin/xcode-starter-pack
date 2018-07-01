@@ -1,0 +1,12 @@
+//
+// This file defines common settings that should be enabled for every new
+// macOS related project or target.
+//
+
+#include "../Universal-Common.xcconfig"
+
+// Supported build architectures
+VALID_ARCHS = x86_64
+
+// Where to find embedded frameworks
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/../Frameworks

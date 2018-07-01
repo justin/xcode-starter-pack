@@ -1,0 +1,88 @@
+//
+// This file defines common settings that should be enabled for every new
+// project or target.
+//
+// This should be considered platform independent.
+//
+
+// Architectures to build. Default to standard.
+ARCHS = $(ARCHS_STANDARD)
+
+// We need this so that we can actually get debugging symbols when using Instruments.
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// Whether to strip debugging symbols when copying resources (like included
+// binaries)
+//
+// Since all of our sub-project frameworks are code-signed there's nothing we
+// can strip without invalidating the signing signature, so default to NO.
+COPY_PHASE_STRIP = NO
+
+// Disable legacy-compatible header searching
+ALWAYS_SEARCH_USER_PATHS = NO
+
+// Allow module imports.
+CLANG_ENABLE_MODULES = YES
+
+// Allow module defines.
+DEFINES_MODULE = YES
+
+// We support ARC everywhere.
+CLANG_ENABLE_OBJC_ARC = YES
+
+// The current version of Swift we support.
+SWIFT_VERSION = 4.2
+
+// The compilation mode (singlefile, wholemodule) to use for generating a Swift binary or framework
+// As of Swift 4.1, this is independent of SWIFT_OPTIMIZATION_LEVEL.
+// More Info: https://swift.org/blog/whole-module-optimizations/
+SWIFT_COMPILATION_MODE = wholemodule
+
+// Warn if there are deprecated functions being called.
+GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES
+
+// Warn whenever a local variable shadows another variable.
+GCC_WARN_SHADOW = YES
+
+// Causes warnings to be emitted about missing prototypes.
+GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES
+
+// Warn whenever a static function is declared but not defined or a noninline static function is unused.
+GCC_WARN_UNUSED_FUNCTION = YES
+
+// Warn if we try to reference an undeclared selector.
+GCC_WARN_UNDECLARED_SELECTOR = YES
+
+// Warn if we are implicitly capturing self in Objective-C code.
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES
+
+// Warn if an Objective-C class either subclasses a deprecated class or overrides a method that has been marked deprecated.
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES
+
+// Check for misuses of `nonnull` parameter and return types.
+CLANG_ANALYZER_NONNULL = YES
+
+// Warn if we try to use a variable without initializing it.
+GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE
+
+// Causes warnings to be emitted when a function with a defined return type (not `void`) contains a return statement without a return-value.
+GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR
+
+// Warn if an API that is newer than the deployment target is used without "if (@available(...))" guards.
+CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE
+
+// Warn when we try to compare a number object with a primitive type.
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE
+
+// Default to Apple Generic Versioning
+VERSIONING_SYSTEM = apple-generic
+
+//=========================
+// macOS Project Deployment
+//=========================
+
+// Our current shipping target.
+MACOSX_DEPLOYMENT_TARGET = 10.13
+
+// The SDK we are using.
+SDKROOT = macosx
