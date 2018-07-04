@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# Lint any changed files using swiftlint.
+#
+# This works both independently and as a run phase script.
+
+# Path to installed version of Swift lint.
+readonly SWIFT_LINT_PATH=$(which swiftlint)
+
+if [ -z "$SWIFT_LINT_PATH" ]; then
+  echo "warning: SwiftLint not installed. Run 'brew bundle' to ensure its installation."
+  exit 0
+fi
+
+_lint() {
+  local filename="${1}"
+  if [[ "${filename##*.}" == "swift" ]]; then
+    ${SWIFT_LINT_PATH} lint --path "${filename}"
+  fi
+}
+
+git diff --cached --name-only | while read filename; do _lint "${filename}"; done
+exit 0
