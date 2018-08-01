@@ -9,3 +9,12 @@
 
 // Apps ain't extensions.
 APPLICATION_EXTENSION_API_ONLY = NO
+
+// It's a Swift app.
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
+// Default to automatic signing with a developer cert.
+CODE_SIGN_IDENTITY = iPhone Developer
+
+// And Automatic Code Signing.
+CODE_SIGN_STYLE = Automatic

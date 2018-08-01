@@ -18,3 +18,9 @@ INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
 
 // Auto Link any frameworks we use by default.
 CLANG_MODULES_AUTOLINK = YES
+
+// Disable code signing for successful device builds with Xcode. Frameworks do
+// need to be signed, but they don't need to be signed at compile time because
+// they'll be re-signed when you include them in your app.
+CODE_SIGNING_REQUIRED = NO
+CODE_SIGN_IDENTITY =

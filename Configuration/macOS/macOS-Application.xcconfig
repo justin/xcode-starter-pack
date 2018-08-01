@@ -6,3 +6,12 @@
 
 // Import macOS Common Configuration
 #include "macOS-Common.xcconfig"
+
+// It's a Swift app.
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
+// Default to automatic signing with a developer cert.
+CODE_SIGN_IDENTITY = Mac Developer
+
+// And Automatic Code Signing.
+CODE_SIGN_STYLE = Automatic

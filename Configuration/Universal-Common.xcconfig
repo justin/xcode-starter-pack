@@ -33,6 +33,9 @@ CLANG_ENABLE_OBJC_ARC = YES
 // The current version of Swift we support.
 SWIFT_VERSION = 4.2
 
+// Default to not embedding the libraries. This is overriden in application targets.
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
+
 // The compilation mode (singlefile, wholemodule) to use for generating a Swift binary or framework
 // As of Swift 4.1, this is independent of SWIFT_OPTIMIZATION_LEVEL.
 // More Info: https://swift.org/blog/whole-module-optimizations/
@@ -76,13 +79,3 @@ CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE
 
 // Default to Apple Generic Versioning
 VERSIONING_SYSTEM = apple-generic
-
-//=========================
-// macOS Project Deployment
-//=========================
-
-// Our current shipping target.
-MACOSX_DEPLOYMENT_TARGET = 10.13
-
-// The SDK we are using.
-SDKROOT = macosx
