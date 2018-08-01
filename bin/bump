@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Increment the build number without remembering the agvtool name.
+
+agvtool next-version -all
