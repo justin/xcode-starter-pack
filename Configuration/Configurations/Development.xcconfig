@@ -22,3 +22,6 @@ SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG JWW_DEV
 // Whether to strip debugging symbols when copying the built product to its
 // final installation location
 STRIP_INSTALLED_PRODUCT = NO
+
+// We don't need the dSYM for development builds.
+DEBUG_INFORMATION_FORMAT = dwarf

@@ -15,3 +15,6 @@ STRIP_INSTALLED_PRODUCT = YES
 // The optimization level for the produced Swift binary. Optimized presently for speed.
 // See Universal-Common.xcconfig for other options.
 SWIFT_OPTIMIZATION_LEVEL = -O
+
+// We need this so that we can actually get debugging symbols when using Instruments.
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
