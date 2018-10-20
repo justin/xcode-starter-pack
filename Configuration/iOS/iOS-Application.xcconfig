@@ -18,3 +18,6 @@ CODE_SIGN_IDENTITY = iPhone Developer
 
 // And Automatic Code Signing.
 CODE_SIGN_STYLE = Automatic
+
+// Add our frameworks to the search path so we don't need to link / copy them into this bundle.
+LD_RUNPATH_SEARCH_PATHS = @executable_path/Frameworks @loader_path/Frameworks
