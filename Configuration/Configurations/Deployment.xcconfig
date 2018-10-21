@@ -1,5 +1,3 @@
-#include "../Universal-Common.xcconfig"
-
 // This the base configuration for any AppStore configuration.
 
 // Whether to perform App Store validation checks

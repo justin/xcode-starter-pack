@@ -1,5 +1,3 @@
-#include "../Universal-Common.xcconfig"
-
 // This the base configuration for any development configuration.
 
 // Only build the current architecture.
