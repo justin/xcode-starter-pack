@@ -24,3 +24,9 @@ CLANG_MODULES_AUTOLINK = YES
 
 // We add a XCTEST_SUITE compiler condition to check / build with.
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) XCTEST_SUITE
+
+// Tests always need Swift just in case.
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
+// Tests don't need to worry about this.
+APPLICATION_EXTENSION_API_ONLY = NO
