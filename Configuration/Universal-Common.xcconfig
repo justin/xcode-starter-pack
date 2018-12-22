@@ -5,6 +5,14 @@
 // This should be considered platform independent.
 //
 
+// Our current shipping targets for the various platforms.
+IPHONEOS_DEPLOYMENT_TARGET = 12.0
+MACOSX_DEPLOYMENT_TARGET = 10.14
+WATCHOS_DEPLOYMENT_TARGET = 5.0
+
+// The current version of Swift we support.
+SWIFT_VERSION = 4.2
+
 // Architectures to build. Default to standard.
 ARCHS = $(ARCHS_STANDARD)
 
@@ -30,11 +38,8 @@ DEFINES_MODULE = YES
 // We support ARC everywhere.
 CLANG_ENABLE_OBJC_ARC = YES
 
-// The current version of Swift we support.
-SWIFT_VERSION = 4.2
-
-// Default to not embedding the libraries. This is overriden in application targets.
-ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
+// By default we don't want Testability enabled.
+ENABLE_TESTABILITY = NO
 
 // The compilation mode (singlefile, wholemodule) to use for generating a Swift binary or framework
 // As of Swift 4.1, this is independent of SWIFT_OPTIMIZATION_LEVEL.
@@ -76,6 +81,66 @@ CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE
 
 // Warn when we try to compare a number object with a primitive type.
 CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE
+
+// Warn when a string that should be localized isn't.
+CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES
+
+// Warn about block captures of implicitly autoreleasing parameters.
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES
+
+// Warn about implicit conversions to boolean values that are suspicious.
+CLANG_WARN_BOOL_CONVERSION = YES
+
+// Warn about suspicious uses of the comma operator.
+CLANG_WARN_COMMA = YES
+
+// Warn about implicit conversions of constant values that cause the constant value to change.
+CLANG_WARN_CONSTANT_CONVERSION = YES
+
+// Warn about loop bodies that are suspiciously empty.
+CLANG_WARN_EMPTY_BODY = YES
+
+// Warn about implicit conversions between different kinds of enum values.
+CLANG_WARN_ENUM_CONVERSION = YES
+
+// Warn if all paths through a function call itself.
+CLANG_WARN_INFINITE_RECURSION = YES
+
+// Warn about implicit conversions between pointers and integers.
+CLANG_WARN_INT_CONVERSION = YES
+
+// Warn about non-literal expressions that evaluate to zero being treated as a null pointer.
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES
+
+// Warn about implicit conversions from Objective-C literals to values of incompatible type.
+CLANG_WARN_OBJC_LITERAL_CONVERSION = YES
+
+// Warn about ranged-based for loops.
+CLANG_WARN_RANGE_LOOP_ANALYSIS = YES
+
+// Warn about non-prototype declarations.
+CLANG_WARN_STRICT_PROTOTYPES = YES
+
+// Warn about non-prototype declarations.
+CLANG_WARN_SUSPICIOUS_MOVE = YES
+
+// Warns about potentially unreachable code.
+CLANG_WARN_UNREACHABLE_CODE = YES
+
+// Warn about declaring the same method more than once within the same `@interface`.
+CLANG_WARN__DUPLICATE_METHOD_MATCH = YES
+
+// Controls whether `objc_msgSend` calls must be cast to the appropriate function pointer type before being called.
+ENABLE_STRICT_OBJC_MSGSEND = YES
+
+// GCC Ass Covering.
+GCC_NO_COMMON_BLOCKS = YES
+
+// Warn if a value is implicitly converted from a 64-bit type to a 32-bit type.
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES
+
+// Warn if there is a variable declared but never used.
+GCC_WARN_UNUSED_VARIABLE = YES
 
 // Default to Apple Generic Versioning
 VERSIONING_SYSTEM = apple-generic

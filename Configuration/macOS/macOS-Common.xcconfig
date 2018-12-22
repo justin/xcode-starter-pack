@@ -5,9 +5,6 @@
 
 #include "../Universal-Common.xcconfig"
 
-// Our current shipping target.
-MACOSX_DEPLOYMENT_TARGET = 10.13
-
 // Where to find embedded frameworks
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/../Frameworks
 

@@ -5,8 +5,5 @@
 
 #include "../Universal-Common.xcconfig"
 
-// Our current shipping target.
-IPHONEOS_DEPLOYMENT_TARGET = 12.0
-
 // The SDK we are using.
 SDKROOT = iphoneos
