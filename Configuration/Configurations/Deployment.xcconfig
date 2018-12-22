@@ -1,4 +1,4 @@
-// This the base configuration for any AppStore configuration.
+// This the base configuration for any Deployment configuration.
 
 // Whether to perform App Store validation checks
 VALIDATE_PRODUCT = YES

@@ -1,6 +1,4 @@
-#include "../Universal-Common.xcconfig"
-
-// This the base configuration for any AppStore configuration.
+// This the base configuration for any profiling configuration.
 
 // Whether to perform App Store validation checks
 VALIDATE_PRODUCT = YES

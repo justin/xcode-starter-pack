@@ -1,0 +1,26 @@
+// Import Common Configuration
+#include "Universal-Common.xcconfig"
+
+// Tests don't support WatchKit, so we are going to do a bit of duplication here to make that explicit.
+SUPPORTED_PLATFORMS = iphonesimulator iphoneos macosx
+
+// Auto Link any frameworks we use by default.
+CLANG_MODULES_AUTOLINK = YES
+
+// We don't actually install these since we're on iOS.
+SKIP_INSTALL = YES
+
+// Test frameworks always need to include the Swift standard libs.
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
+// We add a XCTEST_SUITE compiler condition to check / build with.
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) XCTEST_SUITE
+
+// Test bundles don't care about extension only APIs.
+APPLICATION_EXTENSION_API_ONLY = NO
+
+// Search paths for linking frameworks we want to test.
+JWW_IOS_LD_RUNPATH_SEARCH_PATHS = '@executable_path/Frameworks' '@loader_path/Frameworks'
+LD_RUNPATH_SEARCH_PATHS[sdk=macosx*] = '@executable_path/../Frameworks' '@loader_path/../Frameworks'
+LD_RUNPATH_SEARCH_PATHS[sdk=iphoneos*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATHS)
+LD_RUNPATH_SEARCH_PATHS[sdk=iphonesimulator*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATHS)
