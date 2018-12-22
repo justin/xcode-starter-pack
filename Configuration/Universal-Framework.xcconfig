@@ -1,0 +1,48 @@
+// Import Common Configuration
+#include "Universal-Common.xcconfig"
+
+// Build all architectures by default.
+ONLY_ACTIVE_ARCH = NO
+
+// Default to whole module optimization, unless disabled for a specific target.
+SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
+
+// Development Team ID: Not necessary for a framework target.
+DEVELOPMENT_TEAM =
+
+// Default frameworks to the name of the project, instead of any
+// platform-specific target
+PRODUCT_NAME = $(PROJECT_NAME)
+
+// Enables the framework to be included from any location as long as the
+// loader’s runpath search paths includes it. For example from an application
+// bundle (inside the "Frameworks" folder) or shared folder
+LD_DYLIB_INSTALL_NAME = @rpath/$(PRODUCT_NAME).$(WRAPPER_EXTENSION)/$(PRODUCT_NAME)
+
+// Auto Link any frameworks we use by default.
+CLANG_MODULES_AUTOLINK = YES
+
+// We don't actually install these since we're on iOS.
+SKIP_INSTALL = YES
+
+// This is basically a default setting that shouldn't be overridden.
+INSTALL_PATH = @rpath
+
+// If a framework doesn't need to be extension friendly, override it in the project-specific configuration.
+APPLICATION_EXTENSION_API_ONLY = YES
+
+// Whether to strip out code that isn't called from anywhere
+DEAD_CODE_STRIPPING = NO
+
+// Dynamic linking uses different default copy paths
+LD_RUNPATH_SEARCH_PATHS[sdk=macosx*] = $(JWW_MACOS_LD_RUNPATH_SEARCH_PATHS)
+LD_RUNPATH_SEARCH_PATHS[sdk=iphoneos*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATHS)
+LD_RUNPATH_SEARCH_PATHS[sdk=iphonesimulator*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATHS)
+
+// OSX-specific default settings
+FRAMEWORK_VERSION[sdk=macosx*] = A
+COMBINE_HIDPI_IMAGES[sdk=macosx*] = YES
+
+// No global signing identity necessary for a framework target.
+CODE_SIGNING_REQUIRED = NO
+CODE_SIGN_IDENTITY =

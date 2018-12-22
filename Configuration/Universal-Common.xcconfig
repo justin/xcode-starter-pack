@@ -144,3 +144,13 @@ GCC_WARN_UNUSED_VARIABLE = YES
 
 // Default to Apple Generic Versioning
 VERSIONING_SYSTEM = apple-generic
+
+//================================
+// JWW Specific Settings
+//================================
+
+// iOS specific LD_RUNPATH_SEARCH_PATHS to avoid duplication.
+JWW_IOS_LD_RUNPATH_SEARCH_PATHS = '@executable_path/Frameworks' '@loader_path/Frameworks'
+
+// macOS specific LD_RUNPATH_SEARCH_PATHS to avoid duplication.
+JWW_MACOS_LD_RUNPATH_SEARCH_PATHS = '@executable_path/../Frameworks' '@loader_path/../Frameworks'
