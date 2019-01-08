@@ -6,6 +6,9 @@ ONLY_ACTIVE_ARCH = YES
 // Don't do any Swift optimization so developers' lives are easier.
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 
+// Don't do any Objective-C optimization so developers' lives are easier.
+GCC_OPTIMIZATION_LEVEL = 0
+
 // Enable single file compilation mode for incremental build support.
 SWIFT_COMPILATION_MODE = singlefile
 
