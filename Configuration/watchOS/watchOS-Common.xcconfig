@@ -1,0 +1,12 @@
+//
+// This file defines common settings that should be enabled for every new
+// watchOS related project or target.
+//
+
+#include "../Universal-Common.xcconfig"
+
+// Where to find embedded frameworks
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/../Frameworks
+
+// Use the watchOS SDK.
+SDKROOT = watchos
