@@ -1,6 +1,12 @@
 // Import Common Configuration
 #include "Universal-Common.xcconfig"
 
+// SDK to use for a given platform. Default to iOS and then customize for other platforms as needed.
+SDKROOT = iphoneos
+SDKROOT[arch=x86_64][sdk=macosx*] = macosx
+SDKROOT[arch=i386][sdk=watchsimulator] = watchos
+SDKROOT[arch=armv7k][sdk=watchos*] = watchos
+
 // Build all architectures by default.
 ONLY_ACTIVE_ARCH = NO
 
