@@ -11,7 +11,7 @@ MACOSX_DEPLOYMENT_TARGET = 10.14
 WATCHOS_DEPLOYMENT_TARGET = 5.0
 
 // The current version of Swift we support.
-SWIFT_VERSION = 4.2
+SWIFT_VERSION = 5.0
 
 // Architectures to build. Default to standard.
 ARCHS = $(ARCHS_STANDARD)
