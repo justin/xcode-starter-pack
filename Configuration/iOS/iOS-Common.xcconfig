@@ -7,3 +7,6 @@
 
 // The SDK we are using.
 SDKROOT = iphoneos
+
+// Target iOS specific devices.
+TARGETED_DEVICE_FAMILY = 1,2
