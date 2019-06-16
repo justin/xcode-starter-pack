@@ -4,6 +4,12 @@
 // Tests don't support WatchKit, so we are going to do a bit of duplication here to make that explicit.
 SUPPORTED_PLATFORMS = iphonesimulator iphoneos macosx
 
+// We only need to build the active architecture for a test bundle since it runs on the simulator.
+ONLY_ACTIVE_ARCH = YES
+
+// We don't need a dSYM for tests.
+DEBUG_INFORMATION_FORMAT = dwarf
+
 // Auto Link any frameworks we use by default.
 CLANG_MODULES_AUTOLINK = YES
 
