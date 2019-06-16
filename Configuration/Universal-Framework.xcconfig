@@ -34,6 +34,9 @@ APPLICATION_EXTENSION_API_ONLY = YES
 // Whether to strip out code that isn't called from anywhere
 DEAD_CODE_STRIPPING = NO
 
+// We suport bitcode by default.
+ENABLE_BITCODE = YES
+
 // Dynamic linking uses different default copy paths
 LD_RUNPATH_SEARCH_PATHS[sdk=macosx*] = $(JWW_MACOS_LD_RUNPATH_SEARCH_PATHS)
 LD_RUNPATH_SEARCH_PATHS[sdk=iphoneos*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATHS)
