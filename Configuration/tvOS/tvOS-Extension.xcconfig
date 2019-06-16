@@ -1,0 +1,11 @@
+//
+// This are configuration options specific to all internal tvOS extensions.
+// This file should not be considered standalone. It should instead be imported
+// into your target specific xcconfig.
+//
+
+// Import Common Configuration
+#include "../tvOS-Common.xcconfig"
+
+// Don't even think about calling UIApplication!
+APPLICATION_EXTENSION_API_ONLY = YES

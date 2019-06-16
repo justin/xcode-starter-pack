@@ -1,0 +1,14 @@
+//
+// This are configuration options specific to all internal tvOS applications.
+// This file should not be considered standalone. It should instead be imported
+// into your target specific xcconfig.
+//
+
+// Import Common Configuration
+#include "../tvOS-Common.xcconfig"
+
+// It's a Swift app.
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
+// Apps ain't extensions.
+APPLICATION_EXTENSION_API_ONLY = NO
