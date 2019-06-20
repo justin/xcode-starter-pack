@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+#
+# Run Swiftlint's autocorrect before committing code.
+#
+# Note: Your code will still commit and the autocorrect changes will be set in your working
+# directory. You can either amend your previous commit or makea new one after.
+
+SWIFT_LINT=/usr/local/bin/swiftlint
+if [[ -e "${SWIFT_LINT}" ]]; then
+  git diff --cached --name-only --diff-filter=d | grep .swift | while read filename; do
+      ${SWIFT_LINT} autocorrect --path "$filename"
+  done
+else
+  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+  echo "If you have Homebrew, you can directly use `brew install swiftlint` to install SwiftLint"
+  exit 1
+fi

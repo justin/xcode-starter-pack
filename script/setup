@@ -6,6 +6,14 @@
 readonly SCRIPT_DIR=$( cd "$( dirname "$0" )" && pwd )
 # The root directory of this resources repo (aka '.')
 readonly SOURCE_DIR=$( pwd )
+# The `.git` directory.
+readonly GIT_DIR=$SOURCE_DIR/.git
+
+echo "==> Installing pre-commit hook."
+rm -f $GIT_DIR/hooks/pre-commit
+ln -s $SCRIPT_DIR/git-hooks/pre-commit $GIT_DIR/hooks/pre-commit
+
+chmod +x $GIT_DIR/hooks/*
 
 # Boostrap our dependencies.
 "$SCRIPT_DIR/bootstrap" || exit 1
