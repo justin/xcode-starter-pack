@@ -146,6 +146,9 @@ GCC_WARN_UNUSED_VARIABLE = YES
 // Default to Apple Generic Versioning
 VERSIONING_SYSTEM = apple-generic
 
+// Enable hardenened runtime support for macOS.
+ENABLE_HARDENED_RUNTIME[sdk=macosx*] = YES
+
 //================================
 // JWW Specific Settings
 //================================
@@ -155,3 +158,4 @@ JWW_IOS_LD_RUNPATH_SEARCH_PATHS = '@executable_path/Frameworks' '@loader_path/Fr
 
 // macOS specific LD_RUNPATH_SEARCH_PATHS to avoid duplication.
 JWW_MACOS_LD_RUNPATH_SEARCH_PATHS = '@executable_path/../Frameworks' '@loader_path/../Frameworks'
+
