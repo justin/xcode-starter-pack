@@ -10,3 +10,6 @@ SDKROOT = iphoneos
 
 // Target iOS specific devices.
 TARGETED_DEVICE_FAMILY = 1,2
+
+// Where to find embedded frameworks
+LD_RUNPATH_SEARCH_PATHS = @executable_path/Frameworks @loader_path/Frameworks
