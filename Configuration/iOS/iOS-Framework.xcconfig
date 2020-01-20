@@ -1,0 +1,10 @@
+//
+// This file defines common settings that should be enabled for every new
+// iOS-related framework.
+//
+
+// Import iOS Common Configuration
+#include "iOS-Common.xcconfig"
+
+// Don't even think about calling UIApplication!
+APPLICATION_EXTENSION_API_ONLY = YES
