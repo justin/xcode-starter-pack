@@ -3,7 +3,7 @@
 # Run Swiftlint's autocorrect before committing code.
 #
 # Note: Your code will still commit and the autocorrect changes will be set in your working
-# directory. You can either amend your previous commit or makea new one after.
+# directory. You can either amend your previous commit or make a new one after.
 
 SWIFT_LINT=/usr/local/bin/swiftlint
 if [[ -e "${SWIFT_LINT}" ]]; then
