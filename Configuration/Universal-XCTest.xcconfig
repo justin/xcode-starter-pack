@@ -34,3 +34,7 @@ LD_RUNPATH_SEARCH_PATHS[sdk=iphonesimulator*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATH
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 GCC_OPTIMIZATION_LEVEL = 0
 SWIFT_COMPILATION_MODE = singlefile
+
+// Automatically add XCTest search paths to any test bundle or target that links XCTest.
+// New in Xcode 11.4
+ENABLE_TESTING_SEARCH_PATHS = YES
