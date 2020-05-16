@@ -25,11 +25,6 @@ SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) XCTEST_SUITE
 // Test bundles don't care about extension only APIs.
 APPLICATION_EXTENSION_API_ONLY = NO
 
-// Search paths for linking frameworks we want to test.
-LD_RUNPATH_SEARCH_PATHS[sdk=macosx*] = $(JWW_MACOS_LD_RUNPATH_SEARCH_PATHS)
-LD_RUNPATH_SEARCH_PATHS[sdk=iphoneos*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATHS)
-LD_RUNPATH_SEARCH_PATHS[sdk=iphonesimulator*] = $(JWW_IOS_LD_RUNPATH_SEARCH_PATHS)
-
 // Tests bundles shouldn't be optimized by default.
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 GCC_OPTIMIZATION_LEVEL = 0

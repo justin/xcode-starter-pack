@@ -148,14 +148,3 @@ VERSIONING_SYSTEM = apple-generic
 
 // Enable hardenened runtime support for macOS.
 ENABLE_HARDENED_RUNTIME[sdk=macosx*] = YES
-
-//================================
-// JWW Specific Settings
-//================================
-
-// iOS specific LD_RUNPATH_SEARCH_PATHS to avoid duplication.
-JWW_IOS_LD_RUNPATH_SEARCH_PATHS = '@executable_path/Frameworks' '@loader_path/Frameworks'
-
-// macOS specific LD_RUNPATH_SEARCH_PATHS to avoid duplication.
-JWW_MACOS_LD_RUNPATH_SEARCH_PATHS = '@executable_path/../Frameworks' '@loader_path/../Frameworks'
-
