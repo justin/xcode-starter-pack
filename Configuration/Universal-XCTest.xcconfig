@@ -16,6 +16,10 @@ CLANG_MODULES_AUTOLINK = YES
 // We don't actually install these since we're on iOS.
 SKIP_INSTALL = YES
 
+// Whether to strip debugging symbols when copying the built product to its
+// final installation location
+STRIP_INSTALLED_PRODUCT = NO
+
 // Test frameworks always need to include the Swift standard libs.
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
 
@@ -28,6 +32,8 @@ APPLICATION_EXTENSION_API_ONLY = NO
 // Tests bundles shouldn't be optimized by default.
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 GCC_OPTIMIZATION_LEVEL = 0
+
+// Enable single file compilation mode for incremental build support.
 SWIFT_COMPILATION_MODE = singlefile
 
 // Automatically add XCTest search paths to any test bundle or target that links XCTest.
