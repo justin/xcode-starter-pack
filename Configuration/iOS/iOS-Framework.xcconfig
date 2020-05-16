@@ -6,5 +6,5 @@
 // Import iOS Common Configuration
 #include "iOS-Common.xcconfig"
 
-// Don't even think about calling UIApplication!
-APPLICATION_EXTENSION_API_ONLY = YES
+// Ensure we are setting framework values where appropriate.
+#include "../Universal-Framework.xcconfig"

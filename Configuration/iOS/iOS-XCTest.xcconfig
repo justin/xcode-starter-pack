@@ -7,8 +7,8 @@
 // Import iOS Common Configuration
 #include "iOS-Common.xcconfig"
 
-// We don't actually install these since we're on iOS.
-SKIP_INSTALL = YES
+// Ensure we are setting framework values where appropriate.
+#include "../Universal-XCTest.xcconfig"
 
 // This is basically a default setting that shouldn't be overridden.
 INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
