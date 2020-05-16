@@ -15,10 +15,8 @@ SWIFT_COMPILATION_MODE = singlefile
 // Allow @testable imports
 ENABLE_TESTABILITY = YES
 
-// Xcode 8 introduced a new flag for conditional compilation
-//
-// This enables conditional compilation with #if DEBUG
-SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG JWW_DEV
+// Enable compile time checks using #if JWW_DEVELOPMENT_BUILD
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) JWW_DEVELOPMENT_BUILD DEBUG
 
 // Whether to strip debugging symbols when copying the built product to its
 // final installation location

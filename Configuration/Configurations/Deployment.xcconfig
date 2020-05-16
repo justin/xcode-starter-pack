@@ -13,3 +13,6 @@ STRIP_INSTALLED_PRODUCT = YES
 // The optimization level for the produced Swift binary. Optimized presently for speed.
 // See Universal-Common.xcconfig for other options.
 SWIFT_OPTIMIZATION_LEVEL = -O
+
+// Enable compile time checks using #if JWW_DEPLOYMENT_BUILD
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) JWW_DEPLOYMENT_BUILD

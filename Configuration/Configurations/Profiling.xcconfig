@@ -16,3 +16,6 @@ SWIFT_OPTIMIZATION_LEVEL = -O
 
 // We need this so that we can actually get debugging symbols when using Instruments.
 DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// Enable compile time checks using #if JWW_PROFILING_BUILD
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = JWW_PROFILING_BUILD
