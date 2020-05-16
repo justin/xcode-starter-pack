@@ -11,7 +11,7 @@
 APPLICATION_EXTENSION_API_ONLY = NO
 
 // It's a Swift app.
-ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
 
 // Default to automatic signing with a developer cert.
 CODE_SIGN_IDENTITY = iPhone Developer
