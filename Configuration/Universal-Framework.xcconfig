@@ -57,3 +57,6 @@ BUILD_LIBRARY_FOR_DISTRIBUTION = YES
 
 // Default to not including a bridging header for any created framework.
 SWIFT_INSTALL_OBJC_HEADER = NO
+
+// Since we don't have any Objective-C in the framework, we don't need to define a module.
+DEFINES_MODULE = NO
