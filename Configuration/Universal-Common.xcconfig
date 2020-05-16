@@ -39,9 +39,6 @@ DEFINES_MODULE = YES
 // We support ARC everywhere.
 CLANG_ENABLE_OBJC_ARC = YES
 
-// By default we don't want Testability enabled.
-ENABLE_TESTABILITY = NO
-
 // The compilation mode (singlefile, wholemodule) to use for generating a Swift binary or framework
 // As of Swift 4.1, this is independent of SWIFT_OPTIMIZATION_LEVEL.
 // More Info: https://swift.org/blog/whole-module-optimizations/
