@@ -18,6 +18,3 @@ FRAMEWORK_SEARCH_PATHS = $(BUILT_PRODUCTS_DIR)
 
 // Auto Link any frameworks we use by default.
 CLANG_MODULES_AUTOLINK = YES
-
-// Tests don't need to worry about this.
-APPLICATION_EXTENSION_API_ONLY = NO
