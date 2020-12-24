@@ -25,6 +25,9 @@ PRODUCT_NAME = $(PROJECT_NAME)
 // bundle (inside the "Frameworks" folder) or shared folder
 LD_DYLIB_INSTALL_NAME = @rpath/$(PRODUCT_NAME).$(WRAPPER_EXTENSION)/$(PRODUCT_NAME)
 
+// Sets an explicit value to support SwiftUI previews.
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @loader_path/..
+
 // Auto Link any frameworks we use by default.
 CLANG_MODULES_AUTOLINK = YES
 
