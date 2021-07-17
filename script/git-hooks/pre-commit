@@ -8,7 +8,7 @@
 SWIFT_LINT=/usr/local/bin/swiftlint
 if [[ -e "${SWIFT_LINT}" ]]; then
   git diff --cached --name-only --diff-filter=d | grep .swift | while read filename; do
-      ${SWIFT_LINT} autocorrect --path "$filename"
+      ${SWIFT_LINT} --fix --path "$filename"
   done
 else
   echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
