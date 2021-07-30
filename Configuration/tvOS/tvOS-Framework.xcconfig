@@ -1,13 +1,12 @@
 //
 // This file defines common settings that should be enabled for every new
-// iOS-related framework.
+// tvOS-related framework.
 //
 
-// Import iOS Common Configuration
-#include "iOS-Common.xcconfig"
+// Import tvOS Common Configuration
+#include "tvOS-Common.xcconfig"
 
 // Ensure we are setting framework values where appropriate.
 #include "../Universal-Framework.xcconfig"
 
-// Where to find embedded frameworks
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks

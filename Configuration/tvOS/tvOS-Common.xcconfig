@@ -12,4 +12,4 @@ SDKROOT = appletvos
 TARGETED_DEVICE_FAMILY = 3
 
 // Where to find embedded frameworks
-LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
