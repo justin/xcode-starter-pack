@@ -8,6 +8,11 @@
 ## Build generated
 build/
 DerivedData/
+.swiftpm
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+.github/assets
+.github/artifacts
 
 ## Various settings
 *.pbxuser
