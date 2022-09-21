@@ -1,5 +1,8 @@
 disabled_rules:
   - mark
+  - identifier_name
+  - cyclomatic_complexity
+  - nesting
 
 opt_in_rules:
   - attributes
@@ -7,6 +10,12 @@ opt_in_rules:
   - file_header
   - fatal_error_message
   - private_outlet
+  - raw_value_for_camel_cased_codable_enum
+  - force_https
+
+included:
+  - Sources
+  - Tests
 
 excluded:
   - bin
@@ -15,6 +24,7 @@ excluded:
   - lib
   - script
   - .bundle
+  - Scripts
 
 # Be mindful of force cast force try. Add lint ignoring commentary if these are valid.
 force_cast:
@@ -23,11 +33,41 @@ force_try:
   severity: warning
 
 # Personal preference.
-line_length: 120
+line_length:
+  warning: 150
+  error: 500
+  ignores_comments: true
+  ignores_urls: true
+
+identifier_name:
+  min_length: 2
+  max_length:
+    warning: 90
+    error: 1000
+  excluded:
+    - id
+    - x
+    - y
 
 # Prefer file lengths of less than 500. Its a code smell otherwise.
 file_length:
   warning: 500
   error: 1200
+
+type_body_length:
+  warning: 500
+  error: 1200
+
+function_body_length:
+  warning: 80
+  error: 120
+
+custom_rules:
+  force_https:
+    name: "Force HTTPS over HTTP"
+    regex: "((?i)http(?!s))"
+    match_kinds: string
+    message: "URLs should use HTTPS rather than HTTP to ensure secure connections."
+    severity: warning
 
 reporter: "xcode"
