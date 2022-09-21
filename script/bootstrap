@@ -18,12 +18,3 @@ $($brew_path bundle check)&> /dev/null
 if ! [[ $? -eq 0 ]]; then
   $brew_path bundle || exit 1
 fi
-
-# Install Carthage dependencies
-readonly carthage_path=$(echo `which carthage`)
-echo "==> Bootstrapping Carthage..."
-mkdir -p "$SOURCE_DIR/Carthage"
-if ! cmp -s "$SOURCE_DIR/Cartfile.resolved" "$SOURCE_DIR/Carthage/Cartfile.resolved"; then
-  $($carthage_path bootstrap)&> /dev/null
-  cp "$SOURCE_DIR/Cartfile.resolved" "$SOURCE_DIR/Carthage"
-fi
