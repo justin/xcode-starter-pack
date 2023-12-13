@@ -145,3 +145,9 @@ VERSIONING_SYSTEM = apple-generic
 
 // Enable hardenened runtime support for macOS.
 ENABLE_HARDENED_RUNTIME[sdk=macosx*] = YES
+
+// Allow dyld to merge the framework into its parent app's binary.
+MERGEABLE_LIBRARY = YES
+
+// Allow the linker to create a merged binary automatically.
+MERGED_BINARY_TYPE = automatic
