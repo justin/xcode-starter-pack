@@ -6,13 +6,14 @@
 //
 
 // Our current shipping targets for the various platforms.
-IPHONEOS_DEPLOYMENT_TARGET = 14.0
-MACOSX_DEPLOYMENT_TARGET = 11.0
-WATCHOS_DEPLOYMENT_TARGET = 7.0
-TVOS_DEPLOYMENT_TARGET = 14.0
+IPHONEOS_DEPLOYMENT_TARGET = 18.0
+MACOSX_DEPLOYMENT_TARGET = 15.0
+WATCHOS_DEPLOYMENT_TARGET = 11.0
+TVOS_DEPLOYMENT_TARGET = 18.0
+XROS_DEPLOYMENT_TARGET = 2.0
 
 // The current version of Swift we support.
-SWIFT_VERSION = 5.0
+SWIFT_VERSION = 6.0
 
 // Architectures to build. Default to standard.
 ARCHS = $(ARCHS_STANDARD)
@@ -151,3 +152,19 @@ MERGEABLE_LIBRARY = YES
 
 // Allow the linker to create a merged binary automatically.
 MERGED_BINARY_TYPE = automatic
+
+// New in Xcode 14 (enabled by default in Xcode 15)
+// If enabled, the build system will sandbox user scripts to disallow undeclared input/output dependencies.
+ENABLE_USER_SCRIPT_SANDBOXING
+
+/// When enabled, string tables generated in a localization export will prefer the String Catalog format.
+LOCALIZATION_PREFERS_STRING_CATALOGS = YES
+
+/// When enabled, the Swift compiler will be used to extract Swift string literal and interpolation LocalizedStringKey and LocalizationKey types
+/// during localization export.
+SWIFT_EMIT_LOC_STRINGS = YES
+
+/// If enabled, automatically generate an Info.plist file with content from build settings, and from content in the file pointed to
+/// by INFOPLIST_FILE, if defined.
+GENERATE_INFOPLIST_FILE = YES
+
