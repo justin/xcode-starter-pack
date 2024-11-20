@@ -168,3 +168,19 @@ SWIFT_EMIT_LOC_STRINGS = YES
 /// by INFOPLIST_FILE, if defined.
 GENERATE_INFOPLIST_FILE = YES
 
+/// Activating this setting causes the -dead_strip flag to be passed to ld(1) via cc(1) to turn on dead code stripping.
+DEAD_CODE_STRIPPING = YES
+
+/// Enables clang module verification for frameworks.
+ENABLE_MODULE_VERIFIER = YES
+
+/// Language dialects to verify the module, i.e. the language dialects supported for framework clients.
+/// Allowed values are 'ansi', 'c89', 'gnu89', 'c99', 'gnu99', 'c11', 'gnu11', 'c17', 'gnu17', 'c++98',
+/// 'gnu++98', 'c++11', 'gnu++11', 'c++14', 'gnu++14', 'c++17', 'gnu++17', 'c++20', 'gnu++20'
+MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = gnu17 gnu++14
+
+/// Warns when a quoted include is used instead of a framework style include in a framework header.
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES
+
+/// Generate asset symbol extensions on Apple framework color and image types.
+ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES
