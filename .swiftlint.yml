@@ -1,7 +1,6 @@
 disabled_rules:
   - mark
-  - identifier_name
-  - cyclomatic_complexity
+  - inclusive_language
   - nesting
 
 opt_in_rules:
@@ -25,6 +24,9 @@ excluded:
   - script
   - .bundle
   - Scripts
+  - xcsharedata
+  - "**/**/.build"
+  - "**/**/.swiftpm"
 
 # Be mindful of force cast force try. Add lint ignoring commentary if these are valid.
 force_cast:
@@ -62,12 +64,8 @@ function_body_length:
   warning: 80
   error: 120
 
-custom_rules:
-  force_https:
-    name: "Force HTTPS over HTTP"
-    regex: "((?i)http(?!s))"
-    match_kinds: string
-    message: "URLs should use HTTPS rather than HTTP to ensure secure connections."
-    severity: warning
+attributes:
+  always_on_same_line: ["@IBAction", "@NSManaged", "@Environment", "@State", "@Binding", "@ObservedObject", "@EnvironmentObject", "@SceneStorage", "@Published", "@StateObject", "@ViewStorage", "@FocusState", "@GestureState"]
+  always_on_line_above: ["@Parameter", "@ViewBuilder", "@available", "@Model"]
 
 reporter: "xcode"
