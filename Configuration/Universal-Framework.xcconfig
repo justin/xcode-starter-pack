@@ -13,6 +13,12 @@ ONLY_ACTIVE_ARCH = NO
 // Default to whole module optimization, unless disabled for a specific target.
 SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
 
+// Allow dyld to merge the framework into its parent app's binary.
+MERGEABLE_LIBRARY = YES
+
+// Allow the linker to create a merged binary automatically.
+MERGED_BINARY_TYPE = automatic
+
 // Development Team ID: Not necessary for a framework target.
 DEVELOPMENT_TEAM =
 

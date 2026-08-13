@@ -26,5 +26,4 @@ STRIP_INSTALLED_PRODUCT = NO
 DEBUG_INFORMATION_FORMAT = dwarf
 
 // Use a faster hashing algorithm for signing and disable Developer ID timestamping
-OTHER_CODE_SIGN_FLAGS = --digest-algorithm=sha1 --timestamp=none
-
+OTHER_CODE_SIGN_FLAGS = --timestamp=none

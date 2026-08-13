@@ -36,6 +36,6 @@ GCC_OPTIMIZATION_LEVEL = 0
 // Enable single file compilation mode for incremental build support.
 SWIFT_COMPILATION_MODE = singlefile
 
-// Automatically add XCTest search paths to any test bundle or target that links XCTest.
+// Automatically add test search paths to any test bundle or target that links XCTest.
 // New in Xcode 11.4
 ENABLE_TESTING_SEARCH_PATHS = YES

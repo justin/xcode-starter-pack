@@ -10,9 +10,15 @@ ONLY_ACTIVE_ARCH = NO
 // final installation location
 STRIP_INSTALLED_PRODUCT = YES
 
+// Compile the entire module at once for optimized builds.
+SWIFT_COMPILATION_MODE = wholemodule
+
 // The optimization level for the produced Swift binary. Optimized presently for speed.
 // See Universal-Common.xcconfig for other options.
 SWIFT_OPTIMIZATION_LEVEL = -O
 
 // Enable compile time checks using #if JWW_DEPLOYMENT_BUILD
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) JWW_DEPLOYMENT_BUILD
+
+// Preserve symbols for crash reports and Instruments.
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym

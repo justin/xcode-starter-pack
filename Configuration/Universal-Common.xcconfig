@@ -18,9 +18,6 @@ SWIFT_VERSION = 6.0
 // Architectures to build. Default to standard.
 ARCHS = $(ARCHS_STANDARD)
 
-// We need this so that we can actually get debugging symbols when using Instruments.
-DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
-
 // Whether to strip debugging symbols when copying resources (like included
 // binaries)
 //
@@ -39,11 +36,6 @@ DEFINES_MODULE = YES
 
 // We support ARC everywhere.
 CLANG_ENABLE_OBJC_ARC = YES
-
-// The compilation mode (singlefile, wholemodule) to use for generating a Swift binary or framework
-// As of Swift 4.1, this is independent of SWIFT_OPTIMIZATION_LEVEL.
-// More Info: https://swift.org/blog/whole-module-optimizations/
-SWIFT_COMPILATION_MODE = wholemodule
 
 // Warn if there are deprecated functions being called.
 GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES
@@ -147,15 +139,9 @@ VERSIONING_SYSTEM = apple-generic
 // Enable hardenened runtime support for macOS.
 ENABLE_HARDENED_RUNTIME[sdk=macosx*] = YES
 
-// Allow dyld to merge the framework into its parent app's binary.
-MERGEABLE_LIBRARY = YES
-
-// Allow the linker to create a merged binary automatically.
-MERGED_BINARY_TYPE = automatic
-
 // New in Xcode 14 (enabled by default in Xcode 15)
 // If enabled, the build system will sandbox user scripts to disallow undeclared input/output dependencies.
-ENABLE_USER_SCRIPT_SANDBOXING
+ENABLE_USER_SCRIPT_SANDBOXING = YES
 
 /// When enabled, string tables generated in a localization export will prefer the String Catalog format.
 LOCALIZATION_PREFERS_STRING_CATALOGS = YES
@@ -184,3 +170,6 @@ CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES
 
 /// Generate asset symbol extensions on Apple framework color and image types.
 ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES
+
+/// Generate localized string keys and values from SwiftUI code.
+STRING_CATALOG_GENERATE_SYMBOLS = YES

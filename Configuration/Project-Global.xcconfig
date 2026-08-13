@@ -1,0 +1,21 @@
+//
+// This file contains values shared by every target in a generated project.
+// Replace the placeholder values before shipping an application.
+//
+
+#include "Universal-Common.xcconfig"
+
+// The current app version and build number.
+MARKETING_VERSION = 1.0.0
+CURRENT_PROJECT_VERSION = 1
+
+// Shared product names and bundle identifier root.
+JWW_PROJECT_NAME = StarterPack
+JWW_PRODUCT_MODULE_NAME = StarterPack
+JWW_ROOT_BUNDLE_IDENTIFIER = com.justinwme.starter-pack
+
+// Set this to the Apple Developer team identifier for the project.
+DEVELOPMENT_TEAM =
+
+// Where to find built framework dependencies.
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(BUILT_PRODUCTS_DIR)

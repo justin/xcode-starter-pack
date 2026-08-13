@@ -1,0 +1,9 @@
+//
+// This file defines common settings for macOS test bundles.
+//
+
+#include "macOS-Common.xcconfig"
+#include "../Universal-Testing.xcconfig"
+
+// The host application loads the test bundle.
+BUNDLE_LOADER = $(TEST_HOST)

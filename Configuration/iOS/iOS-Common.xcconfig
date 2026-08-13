@@ -3,7 +3,7 @@
 // iOS related project or target.
 //
 
-#include "../Universal-Common.xcconfig"
+#include "../Project-Global.xcconfig"
 
 // The SDK we are using.
 SDKROOT = iphoneos

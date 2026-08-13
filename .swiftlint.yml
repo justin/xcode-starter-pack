@@ -10,7 +10,6 @@ opt_in_rules:
   - fatal_error_message
   - private_outlet
   - raw_value_for_camel_cased_codable_enum
-  - force_https
 
 included:
   - Sources
