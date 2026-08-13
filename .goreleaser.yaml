@@ -1,0 +1,36 @@
+version: 2
+
+project_name: xcode-starter-pack
+
+builds:
+  - id: xcode-starter-pack
+    main: ./cmd/xcode-starter-pack
+    binary: xcode-starter-pack
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - id: default
+    formats:
+      - tar.gz
+
+brews:
+  - ids:
+      - default
+    directory: Formula
+    homepage: https://github.com/justin/xcode-starter-pack
+    description: Create an Xcode project from Justin's starter pack
+    license: MIT
+    repository:
+      owner: justin
+      name: tap
+      branch: main
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+    dependencies:
+      - name: xcodegen
+        type: formula

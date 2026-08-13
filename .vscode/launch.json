@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Go: Debug xcode-starter-pack",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}/cmd/xcode-starter-pack",
+      "cwd": "${workspaceFolder}",
+      "args": ["new"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Go: Debug current package tests",
+      "type": "go",
+      "request": "launch",
+      "mode": "test",
+      "program": "${fileDirname}",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Go: Attach to process",
+      "type": "go",
+      "request": "attach",
+      "mode": "local",
+      "processId": "${command:pickProcess}"
+    }
+  ]
+}

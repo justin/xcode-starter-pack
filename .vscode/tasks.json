@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Xcode Starter Pack: Build CLI",
+      "type": "process",
+      "command": "just",
+      "args": ["build"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$go"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Xcode Starter Pack: Test CLI",
+      "type": "process",
+      "command": "just",
+      "args": ["test"],
+      "group": "test",
+      "problemMatcher": ["$go"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Xcode Starter Pack: Check CLI",
+      "type": "process",
+      "command": "just",
+      "args": ["check"],
+      "problemMatcher": ["$go"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}

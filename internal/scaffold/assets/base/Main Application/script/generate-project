@@ -8,7 +8,7 @@ readonly SCRIPT_DIR=$( cd "$( dirname "$0" )" && pwd )
 readonly SOURCE_DIR=$( cd "$SCRIPT_DIR/.." && pwd )
 
 if ! command -v xcodegen >/dev/null 2>&1; then
-  echo "error: XcodeGen is not installed. Run script/bootstrap first."
+  echo "error: XcodeGen is not installed. Run 'brew install xcodegen' first."
   exit 1
 fi
 
