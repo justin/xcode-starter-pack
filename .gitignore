@@ -1,40 +1,24 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## macOS Garbage
+# macOS
 .DS_Store
 
-## Build generated
+# Go and release output
 build/
-DerivedData/
-.swiftpm
-.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+dist/
+coverage.out
 
-.github/assets
-.github/artifacts
+# Generated local projects
+/build/Example/
 
-## Various settings
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata/
+# IDE state
+.vscode/*.code-workspace
 
-## Other
-*.moved-aside
-*.xccheckout
-*.xcscmblueprint
+# Local tool state
+.claude/worktrees/
+.claude/settings.local.json
 
-## Obj-C/Swift specific
-*.hmap
-*.ipa
-*.dSYM.zip
-*.dSYM
+# GitHub Actions artifacts
+.github/assets/
+.github/artifacts/
 
 ## Playgrounds
 timeline.xctimeline

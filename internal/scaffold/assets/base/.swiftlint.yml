@@ -12,15 +12,15 @@ opt_in_rules:
   - raw_value_for_camel_cased_codable_enum
 
 included:
-  - Sources
-  - Tests
+  - Main Application
+  - Shared Code
 
 excluded:
-  - bin
   - Carthage
   - fastlane
   - lib
   - script
+  - "Main Application/*.xcodeproj"
   - .bundle
   - Scripts
   - xcsharedata

@@ -23,8 +23,8 @@ STRIP_INSTALLED_PRODUCT = NO
 // Test frameworks always need to include the Swift standard libs.
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
 
-// We add a XCTEST_SUITE compiler condition to check / build with.
-SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) XCTEST_SUITE
+// We add a TESTING_SUITE compiler condition to check / build with.
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) TESTING_SUITE
 
 // Test bundles don't care about extension only APIs.
 APPLICATION_EXTENSION_API_ONLY = NO
