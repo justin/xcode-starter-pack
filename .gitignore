@@ -73,3 +73,5 @@ fastlane/test_output
 .claude/worktrees
 .claude/settings.local.json
 
+# XcodeGen output
+/StarterPack.xcodeproj/
