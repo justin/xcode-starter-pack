@@ -74,10 +74,37 @@ func TestCreateBuildsReactionsStyleProjectLayout(t *testing.T) {
 			t.Errorf("%s does not contain the test bundle identifier", relativePath)
 		}
 	}
-	for _, expected := range []string{"path: ../Shared Code", "Orbit (iOS):", "Orbit (macOS):", "Orbit Tests (iOS):", "Orbit Tests (macOS):"} {
+	for _, expected := range []string{
+		"jww-swift-toolkit:",
+		"url: https://github.com/justin/jww-swift-toolkit.git",
+		"from: 1.1.0",
+		"path: ../Shared Code",
+		"Orbit (iOS):",
+		"Orbit (macOS):",
+		"Orbit Tests (iOS):",
+		"Orbit Tests (macOS):",
+		"package: jww-swift-toolkit\n        product: JWWCore",
+		"package: jww-swift-toolkit\n        product: JWWTestExtensions",
+	} {
 		if !strings.Contains(string(projectYAML), expected) {
 			t.Errorf("project.yml does not contain %q", expected)
 		}
+	}
+
+	appSource, err := os.ReadFile(filepath.Join(outputPath, "Main Application/App - iOS/OrbitApp.swift"))
+	if err != nil {
+		t.Fatalf("ReadFile(app source) error = %v", err)
+	}
+	if !strings.Contains(string(appSource), "import JWWCore") {
+		t.Error("app source does not import JWWCore")
+	}
+
+	testSource, err := os.ReadFile(filepath.Join(outputPath, "Main Application/Tests/iOS/OrbitTests.swift"))
+	if err != nil {
+		t.Fatalf("ReadFile(test source) error = %v", err)
+	}
+	if !strings.Contains(string(testSource), "import JWWTestExtensions") {
+		t.Error("test source does not import JWWTestExtensions")
 	}
 	if strings.Contains(string(projectYAML), "Profiling") {
 		t.Error("project.yml includes the removed Profiling configuration")

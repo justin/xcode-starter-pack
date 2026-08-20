@@ -133,6 +133,7 @@ struct %sSharedTests {
 
 func appSource(moduleName string, currentPlatform platform) string {
 	return fmt.Sprintf(`import SwiftUI
+import JWWCore
 import %sShared
 
 @main
@@ -148,6 +149,7 @@ struct %sApp: App {
 
 func appTests(moduleName string) string {
 	return fmt.Sprintf(`import Testing
+import JWWTestExtensions
 @testable import %sApp
 
 struct %sAppTests {
@@ -182,6 +184,9 @@ fileGroups:
   - ../AGENTS.md
 
 packages:
+  jww-swift-toolkit:
+    url: https://github.com/justin/jww-swift-toolkit.git
+    from: 1.1.0
   %sShared:
     path: ../Shared Code
 
@@ -196,6 +201,8 @@ targets:
     platform: %s
     sources: %s
     dependencies:
+      - package: jww-swift-toolkit
+        product: JWWCore
       - package: %sShared
         product: %sShared
     configFiles:
@@ -211,6 +218,8 @@ targets:
     sources: Tests/%s
     dependencies:
       - target: %s
+      - package: jww-swift-toolkit
+        product: JWWTestExtensions
     configFiles:
       Development: Configuration/%s.xcconfig
       Deployment: Configuration/%s.xcconfig
