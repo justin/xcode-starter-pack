@@ -33,12 +33,10 @@ func readmeFile(request Request) string {
 This project contains a generated main application project, a local shared-code
 Swift package, and an Xcode workspace that contains both.
 
-## Generate the Xcode project
+Open %s.xcworkspace to build and run the application. New tests use Swift Testing.
 
-    cd "Main Application"
-    script/generate-project
-
-Open %s.xcworkspace after generation. New tests use Swift Testing.
+The Xcode project is ready to edit directly. Commit the .xcodeproj and .xcworkspace
+alongside the source code; no regeneration step is needed.
 `, request.ProjectName, request.ProjectName)
 }
 
@@ -180,8 +178,6 @@ configFiles:
 
 fileGroups:
   - Configuration
-  - ../README.md
-  - ../AGENTS.md
 
 packages:
   jww-swift-toolkit:
@@ -189,6 +185,7 @@ packages:
     from: 1.1.0
   %sShared:
     path: ../Shared Code
+    excludeFromProject: true
 
 targets:
 `, request.ProjectName, moduleName)

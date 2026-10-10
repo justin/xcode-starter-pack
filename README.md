@@ -1,6 +1,6 @@
 # xcode-starter-pack
 
-`xcode-starter-pack` creates an opinionated Apple project scaffold: an XcodeGen main
+`xcode-starter-pack` creates an opinionated Apple project scaffold: an Xcode main
 application, a local shared-code Swift package, and a workspace containing both.
 The starter assets are embedded in the CLI binary, so the generated project is
 always built from the version of the tool being run.
@@ -32,6 +32,10 @@ build/xcode-starter-pack new \
 ```
 
 The command only publishes the output directory after XcodeGen has succeeded.
+XcodeGen is used once during creation. The finished project contains no generation
+spec or regeneration script. Open the workspace, edit the project directly, and
+commit the `.xcodeproj` and `.xcworkspace` alongside the source code. Shared Code
+and the root documentation appear in the workspace without duplicate project groups.
 Generated bundle identifiers use `com.justinwme.<project-name>.app` and
 `com.justinwme.<project-name>.tests`; targets retain spaces and are labelled
 per platform, such as `Orbit (iOS)`.

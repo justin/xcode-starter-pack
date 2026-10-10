@@ -4,7 +4,6 @@ import (
 	"embed"
 	"fmt"
 	"io/fs"
-	"os"
 	"path/filepath"
 )
 
@@ -36,10 +35,6 @@ func writeBaseAssets(outputPath string) error {
 		if err != nil {
 			return err
 		}
-		mode := os.FileMode(0o644)
-		if path == "Main Application/script/generate-project" {
-			mode = 0o755
-		}
-		return writeBytes(filepath.Join(outputPath, filepath.FromSlash(path)), contents, mode)
+		return writeBytes(filepath.Join(outputPath, filepath.FromSlash(path)), contents, 0o644)
 	})
 }
