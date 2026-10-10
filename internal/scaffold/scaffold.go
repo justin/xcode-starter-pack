@@ -31,11 +31,11 @@ type platform struct {
 
 var supportedPlatforms = map[string]platform{
 	"ios": {
-		Name: "iOS", XcodeGenName: "iOS", PackagePlatform: ".iOS(.v18)", ConfigurationDir: "iOS", AppDirectory: "App - iOS",
+		Name: "iOS", XcodeGenName: "iOS", PackagePlatform: `.iOS("18.4")`, ConfigurationDir: "iOS", AppDirectory: "App - iOS",
 		TestHost: "$(BUILT_PRODUCTS_DIR)/$(JWW_PROJECT_NAME).app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/$(JWW_PROJECT_NAME)",
 	},
 	"macos": {
-		Name: "macOS", XcodeGenName: "macOS", PackagePlatform: ".macOS(.v15)", ConfigurationDir: "macOS", AppDirectory: "App - macOS",
+		Name: "macOS", XcodeGenName: "macOS", PackagePlatform: `.macOS("15.4")`, ConfigurationDir: "macOS", AppDirectory: "App - macOS",
 		TestHost: "$(BUILT_PRODUCTS_DIR)/$(JWW_PROJECT_NAME).app/Contents/MacOS/$(JWW_PROJECT_NAME)",
 	},
 }
