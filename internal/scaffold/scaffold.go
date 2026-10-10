@@ -93,6 +93,9 @@ func CreateAndGenerate(request Request, output, errorOutput io.Writer) error {
 		}
 		return err
 	}
+	if err := os.Remove(filepath.Join(temporaryOutputPath, "Main Application/project.yml")); err != nil {
+		return fmt.Errorf("remove generation spec: %w", err)
+	}
 	return os.Rename(temporaryOutputPath, request.OutputPath)
 }
 
@@ -144,7 +147,7 @@ func writeProjectAtPath(request Request, moduleName string, platforms []platform
 	files := map[string]string{
 		"AGENTS.md": agentsFile(),
 		"README.md": readmeFile(request),
-		fmt.Sprintf("%s.xcworkspace/contents.xcworkspacedata", request.ProjectName):                workspaceFile(request),
+		fmt.Sprintf("%s.xcworkspace/contents.xcworkspacedata", request.ProjectName): workspaceFile(request),
 		"Main Application/project.yml":                                                             projectYAML(request, moduleName, platforms),
 		"Main Application/Configuration/Project-Global.xcconfig":                                   projectGlobalConfig(request, moduleName),
 		"Shared Code/Package.swift":                                                                packageFile(moduleName, platforms),

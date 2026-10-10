@@ -3,7 +3,6 @@
 
 # Xcode
 DerivedData/
-Main Application/*.xcodeproj/
 *.xcworkspace/xcuserdata/
 xcuserdata/
 *.pbxuser

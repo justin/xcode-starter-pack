@@ -1,11 +1,70 @@
 package scaffold
 
 import (
+	"bytes"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 	"testing"
 )
+
+func TestCreateAndGeneratePublishesFinishedWorkspace(t *testing.T) {
+	if _, err := exec.LookPath("xcodegen"); err != nil {
+		t.Skip("xcodegen is required for generation integration coverage")
+	}
+	outputPath := filepath.Join(t.TempDir(), "Orbit Project")
+	var output bytes.Buffer
+	err := CreateAndGenerate(Request{
+		OutputPath: outputPath, ProjectName: "Orbit Project",
+		Platforms:     []string{"iOS", "macOS"},
+		AppTargetName: "Orbit", TestTargetName: "Orbit Tests",
+	}, &output, &output)
+	if err != nil {
+		t.Fatalf("CreateAndGenerate() error = %v\n%s", err, &output)
+	}
+	for _, relativePath := range []string{"Main Application/project.yml", "Main Application/script"} {
+		if _, err := os.Stat(filepath.Join(outputPath, relativePath)); !os.IsNotExist(err) {
+			t.Errorf("generation input %s exists or could not be checked: %v", relativePath, err)
+		}
+	}
+	read := func(relativePath string) string {
+		t.Helper()
+		contents, err := os.ReadFile(filepath.Join(outputPath, relativePath))
+		if err != nil {
+			t.Fatal(err)
+		}
+		return string(contents)
+	}
+	projectPath := "Main Application/Orbit Project.xcodeproj/project.pbxproj"
+	project := read(projectPath)
+	for _, unwanted := range []string{"XCLocalSwiftPackageReference", "/* Packages */", "Shared Code", "README.md", "AGENTS.md", ".xcode-starter-pack-"} {
+		if strings.Contains(project, unwanted) {
+			t.Errorf("project contains duplicate workspace reference %q", unwanted)
+		}
+	}
+	if count := strings.Count(project, "productName = OrbitProjectShared;"); count != 2 {
+		t.Errorf("shared product dependency count = %d, want one for each app target", count)
+	}
+	if count := strings.Count(project, "isa = PBXBuildFile; productRef ="); count != 6 {
+		t.Errorf("linked package product count = %d, want shared and toolkit products for both platforms", count)
+	}
+	workspace := read("Orbit Project.xcworkspace/contents.xcworkspacedata")
+	for _, reference := range []string{"Main Application/Orbit Project.xcodeproj", "Shared Code", "README.md", "AGENTS.md"} {
+		if strings.Count(workspace, "group:"+reference+"\"") != 1 {
+			t.Errorf("workspace must contain exactly one reference to %s", reference)
+		}
+	}
+	if _, err := exec.Command("git", "-C", outputPath, "init", "--quiet").CombinedOutput(); err != nil {
+		t.Fatal(err)
+	}
+	command := exec.Command("git", "-C", outputPath, "-c", "core.excludesFile=/dev/null", "check-ignore", projectPath)
+	if result, err := command.CombinedOutput(); err == nil {
+		t.Fatalf("generated project is ignored: %s", result)
+	} else if exitError, ok := err.(*exec.ExitError); !ok || exitError.ExitCode() != 1 {
+		t.Fatalf("git check-ignore failed: %v\n%s", err, result)
+	}
+}
 
 func TestCreateBuildsReactionsStyleProjectLayout(t *testing.T) {
 	outputPath := filepath.Join(t.TempDir(), "Orbit")
